@@ -101,7 +101,7 @@
             }
 
             int result;
-            // Divide amount by divideBy
+
             if (salePrice != 0)
             {
                 int divideAndRoundDown = (int)Math.Floor((double)amount / divideBy);
