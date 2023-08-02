@@ -1,6 +1,4 @@
-﻿using Moq;
-using NUnit.Framework;
-using System.Diagnostics;
+﻿using NUnit.Framework;
 
 namespace Bluetree_Coding_Challenge.Tests
 { 
@@ -8,6 +6,7 @@ namespace Bluetree_Coding_Challenge.Tests
     public class ProgramTests
     {
         private StringWriter? consoleOutput;
+        readonly ItemScanner ItemScanner = new();
 
         [SetUp]
         public void Setup()
@@ -72,9 +71,7 @@ namespace Bluetree_Coding_Challenge.Tests
             Console.SetIn(inputReader);
             Console.SetOut(outputWriter);
 
-            var itemScanner = new ItemScanner();
-
-            itemScanner.Run();
+            ItemScanner.Run();
 
             string actualOutput = outputWriter.ToString();
             StringAssert.Contains("Item scanner running. Type \"stop\" to stop the program", actualOutput);
@@ -95,9 +92,7 @@ namespace Bluetree_Coding_Challenge.Tests
             Console.SetIn(inputReader);
             Console.SetOut(outputWriter);
 
-            var itemScanner = new ItemScanner();
-
-            itemScanner.Run();
+            ItemScanner.Run();
 
             string actualOutput = outputWriter.ToString();
             StringAssert.Contains("Invalid SKU", actualOutput);
