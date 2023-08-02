@@ -2,6 +2,13 @@
 {
     class ItemScanner
     {
+        static void Main()
+        {
+            var itemScanner = new ItemScanner();
+
+            itemScanner.Run();
+        }
+
         public void Run()
         {
             bool appOn = true;
@@ -48,13 +55,6 @@
 
             int finalTotal = CalculateTotal(scannedItems);
             Console.WriteLine($"Final total is: {finalTotal}");
-        }
-
-        static void Main()
-        {
-            var itemScanner = new ItemScanner();
-
-            itemScanner.Run();
         }
 
         internal static int CalculateTotal(int[] scannedItems)
